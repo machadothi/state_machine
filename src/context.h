@@ -57,7 +57,6 @@ public:
 
 typedef IContext::ptr_t IContext_ptr;
 
-
 template<typename State>
 std::unique_ptr<State> make_state(std::shared_ptr<IContext> &c)
 {

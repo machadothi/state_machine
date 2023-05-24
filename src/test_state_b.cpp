@@ -14,7 +14,7 @@ IState::Status TestStateB::run() {
 
    std::cout << "\nState B stoped. Transitioning to A." << std::endl;
 
-   m_context->transition_to(std::move(make_state<TestStateA>(m_context)));
+   m_context->transition_to(make_state<TestStateA>(m_context));
 
    return Status::SUCCESS;
 }

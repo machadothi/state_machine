@@ -19,7 +19,7 @@ void TestContext::stop()
  */
 void TestContext::transition_to(IState_ptr &&state)
 {
-   std::cout << "Context: Transition to " << typeid(*state).name() << ".\n";
+   std::cout << "Context: Transition to " << state->name() << ".\n";
 
    this->m_state = std::move(state);
 }
