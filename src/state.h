@@ -39,7 +39,7 @@ protected:
    std::string m_name;
    std::shared_ptr<IContext> m_context;
 
-   IState(std::weak_ptr<IContext> context,
+   IState(std::shared_ptr<IContext> context,
       const std::string &name) : 
       m_name(name),
       m_context(context) {}
@@ -53,7 +53,7 @@ public:
       FINISHED
    };
 
-   typedef std::shared_ptr<IState> ptr_t;
+   typedef std::unique_ptr<IState> ptr_t;
 
    virtual ~IState(){}
 
