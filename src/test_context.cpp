@@ -5,27 +5,30 @@ TestContext::TestContext()
    std::cout << "TestContext created!" << std::endl;
 }
 
+// -----------------------------------------------------------------------------
+
 void TestContext::start(IState_ptr &&state)
 {
    transition_to(std::move(state));
 }
 
+// -----------------------------------------------------------------------------
+
 void TestContext::stop()
 {
    this->m_state.reset();
 }
-/**
- * The Context allows changing the State object at runtime.
- */
+
+// -----------------------------------------------------------------------------
+
 void TestContext::transition_to(IState_ptr &&state)
 {
    std::cout << "Context: Transition to " << state->name() << ".\n";
 
    this->m_state = std::move(state);
 }
-/**
- * The Context delegates part of its behavior to the current State object.
- */
+
+// -----------------------------------------------------------------------------
 
 IContext::Status TestContext::run()
 {

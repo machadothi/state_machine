@@ -6,6 +6,8 @@ TestStateA::TestStateA(std::shared_ptr<IContext> context) :
       std::cout << "TestStateA Created!\n";
 }
 
+// -----------------------------------------------------------------------------
+
 IState::Status TestStateA::run() {
    static unsigned value = 10;
 
